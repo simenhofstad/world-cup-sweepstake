@@ -1,6 +1,7 @@
 import requests
 import urllib3
 import webbrowser
+import json
 from datetime import datetime
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -63,15 +64,45 @@ def get_live_standings():
 
 def gd_format(gd):
     return f"+{gd}" if gd > 0 else str(gd)
+def load_previous_ranks():
+    try:
+        with open("previous_ranks.json", "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return {"top": {}, "worst": {}}
 
+
+def save_current_ranks(top_race, worst_race):
+    ranks = {
+        "top": {row["Team"]: i + 1 for i, row in enumerate(top_race)},
+        "worst": {row["Team"]: 48 - i for i, row in enumerate(worst_race)}
+    }
+
+    with open("previous_ranks.json", "w", encoding="utf-8") as file:
+        json.dump(ranks, file, indent=4)
+
+
+def movement_arrow(current_rank, previous_rank):
+    if previous_rank is None:
+        return "NEW"
+
+    change = previous_rank - current_rank
+
+    if change > 0:
+        return f"↑{change}"
+    elif change < 0:
+        return f"↓{abs(change)}"
+    else:
+        return "→"
 
 def make_table(rows, table_type):
     html = """
     <table>
         <tr>
             <th>Rank</th>
-            <th>Team</th>
+            <th>Move</th>
             <th>Owner</th>
+            <th>Team</th>
             <th>Group</th>
             <th>Played</th>
             <th>Pts</th>
@@ -90,11 +121,19 @@ def make_table(rows, table_type):
             prize = "🥄 200 kr" if i == 0 else ""
             row_class = "spoon" if i == 0 else ""
 
+        if table_type == "top":
+            previous_rank = previous_ranks.get("top", {}).get(row["Team"])
+        else:
+            previous_rank = previous_ranks.get("worst", {}).get(row["Team"])
+
+        move = movement_arrow(rank, previous_rank)
+
         html += f"""
         <tr class="{row_class}">
             <td>{rank}</td>
-            <td>{row["Team"]}</td>
+            <td>{move}</td>
             <td>{row["Owner"]}</td>
+            <td>{row["Team"]}</td>
             <td>{row["Group"]}</td>
             <td>{row["Played"]}</td>
             <td>{row["Pts"]}</td>
@@ -111,7 +150,7 @@ standings = get_live_standings()
 
 top_race = sorted(standings, key=lambda x: (-x["Pts"], -x["GD"], x["Team"]))
 worst_race = sorted(standings, key=lambda x: (x["Pts"], x["GD"], x["Team"]))
-
+previous_ranks = load_previous_ranks()
 winner = top_race[0]
 runner_up = top_race[1]
 worst = worst_race[0]
@@ -293,6 +332,8 @@ html = f"""
 
 with open("index.html", "w", encoding="utf-8") as file:
     file.write(html)
+
+save_current_ranks(top_race, worst_race)
 
 webbrowser.open("index.html")
 
