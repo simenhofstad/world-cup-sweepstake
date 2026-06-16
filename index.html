@@ -1,0 +1,1251 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300">
+    <title>World Cup Sweepstake</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f8;
+            margin: 0;
+            padding: 30px;
+            color: #102030;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .updated {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #607080;
+            font-size: 14px;
+        }
+
+        .summary {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            background: white;
+            width: 240px;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .card h3 {
+            margin: 14px 0 6px;
+            font-size: 26px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 18px;
+            color: #4a5568;
+        }
+
+        .tables {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        th {
+            background: #12395b;
+            color: white;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background: #f7f9fb;
+        }
+
+        .gold {
+            background: #fff3bf !important;
+            font-weight: bold;
+        }
+
+        .silver {
+            background: #e5e7eb !important;
+            font-weight: bold;
+        }
+
+        .spoon {
+            background: #ffd6a5 !important;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1000px) {
+            .summary, .tables {
+                display: block;
+            }
+
+            .card, .box {
+                width: auto;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>🏆 World Cup Sweepstake</h1>
+<div class="updated">Last updated: 16 Jun 2026 17:07</div>
+
+<div class="summary">
+    <div class="card">
+        <h2>🥇 600 kr</h2>
+        <h3>Didrik</h3>
+        <p>Germany</p>
+    </div>
+
+    <div class="card">
+        <h2>🥈 400 kr</h2>
+        <h3>Opie</h3>
+        <p>Sweden</p>
+    </div>
+
+    <div class="card">
+        <h2>🥄 200 kr</h2>
+        <h3>Emil</h3>
+        <p>Curaçao</p>
+    </div>
+</div>
+
+<div class="tables">
+    <div class="box">
+        <h2>Race for 1st and 2nd Prize</h2>
+        
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Team</th>
+            <th>Owner</th>
+            <th>Group</th>
+            <th>Played</th>
+            <th>Pts</th>
+            <th>GD</th>
+            <th>Prize</th>
+        </tr>
+    
+        <tr class="gold">
+            <td>1</td>
+            <td>Germany</td>
+            <td>Didrik</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+6</td>
+            <td>🥇 600 kr</td>
+        </tr>
+        
+        <tr class="silver">
+            <td>2</td>
+            <td>Sweden</td>
+            <td>Opie</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+4</td>
+            <td>🥈 400 kr</td>
+        </tr>
+        
+        <tr class="">
+            <td>3</td>
+            <td>United States</td>
+            <td>Aure</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+3</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>4</td>
+            <td>Australia</td>
+            <td>Zerv</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>5</td>
+            <td>Mexico</td>
+            <td>Aure</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>6</td>
+            <td>Ivory Coast</td>
+            <td>Unassigned</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>7</td>
+            <td>Scotland</td>
+            <td>Leis</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>8</td>
+            <td>South Korea</td>
+            <td>Unassigned</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>9</td>
+            <td>Belgium</td>
+            <td>Danny</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>10</td>
+            <td>Bosnia-Herzegovina</td>
+            <td>Unassigned</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>11</td>
+            <td>Brazil</td>
+            <td>Wilmer</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>12</td>
+            <td>Canada</td>
+            <td>Caspar</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>13</td>
+            <td>Cape Verde Islands</td>
+            <td>Wilmer</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>14</td>
+            <td>Egypt</td>
+            <td>Børre</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>15</td>
+            <td>Iran</td>
+            <td>Danny</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>16</td>
+            <td>Japan</td>
+            <td>Wilmer</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>17</td>
+            <td>Morocco</td>
+            <td>Opie</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>18</td>
+            <td>Netherlands</td>
+            <td>Aure</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>19</td>
+            <td>New Zealand</td>
+            <td>Zerv</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>20</td>
+            <td>Qatar</td>
+            <td>Leis</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>21</td>
+            <td>Saudi Arabia</td>
+            <td>Børre</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>22</td>
+            <td>Spain</td>
+            <td>Emil</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>23</td>
+            <td>Switzerland</td>
+            <td>Caspar</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>24</td>
+            <td>Uruguay</td>
+            <td>Aksel</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>25</td>
+            <td>Algeria</td>
+            <td>Opie</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>26</td>
+            <td>Argentina</td>
+            <td>Aksel</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>27</td>
+            <td>Austria</td>
+            <td>Emil</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>28</td>
+            <td>Colombia</td>
+            <td>Danny</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>29</td>
+            <td>Congo DR</td>
+            <td>Hofstad</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>30</td>
+            <td>Croatia</td>
+            <td>Aure</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>31</td>
+            <td>England</td>
+            <td>Aksel</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>32</td>
+            <td>France</td>
+            <td>Didrik</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>33</td>
+            <td>Ghana</td>
+            <td>Hofstad</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>34</td>
+            <td>Iraq</td>
+            <td>Aksel</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>35</td>
+            <td>Jordan</td>
+            <td>Børre</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>36</td>
+            <td>Norway</td>
+            <td>Caspar</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>37</td>
+            <td>Panama</td>
+            <td>Leis</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>38</td>
+            <td>Portugal</td>
+            <td>Børre</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>39</td>
+            <td>Senegal</td>
+            <td>Didrik</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>40</td>
+            <td>Uzbekistan</td>
+            <td>Caspar</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>41</td>
+            <td>Czechia</td>
+            <td>Unassigned</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>42</td>
+            <td>Ecuador</td>
+            <td>Emil</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>43</td>
+            <td>Haiti</td>
+            <td>Zerv</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>44</td>
+            <td>South Africa</td>
+            <td>Hofstad</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>45</td>
+            <td>Turkey</td>
+            <td>Danny</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>46</td>
+            <td>Paraguay</td>
+            <td>Opie</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-3</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>47</td>
+            <td>Tunisia</td>
+            <td>Zerv</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-4</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>48</td>
+            <td>Curaçao</td>
+            <td>Emil</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-6</td>
+            <td></td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="box">
+        <h2>Race for Worst Team</h2>
+        
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Team</th>
+            <th>Owner</th>
+            <th>Group</th>
+            <th>Played</th>
+            <th>Pts</th>
+            <th>GD</th>
+            <th>Prize</th>
+        </tr>
+    
+        <tr class="spoon">
+            <td>48</td>
+            <td>Curaçao</td>
+            <td>Emil</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-6</td>
+            <td>🥄 200 kr</td>
+        </tr>
+        
+        <tr class="">
+            <td>47</td>
+            <td>Tunisia</td>
+            <td>Zerv</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-4</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>46</td>
+            <td>Paraguay</td>
+            <td>Opie</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-3</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>45</td>
+            <td>South Africa</td>
+            <td>Hofstad</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>44</td>
+            <td>Turkey</td>
+            <td>Danny</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>43</td>
+            <td>Czechia</td>
+            <td>Unassigned</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>42</td>
+            <td>Ecuador</td>
+            <td>Emil</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>41</td>
+            <td>Haiti</td>
+            <td>Zerv</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>40</td>
+            <td>Algeria</td>
+            <td>Opie</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>39</td>
+            <td>Argentina</td>
+            <td>Aksel</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>38</td>
+            <td>Austria</td>
+            <td>Emil</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>37</td>
+            <td>Colombia</td>
+            <td>Danny</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>36</td>
+            <td>Congo DR</td>
+            <td>Hofstad</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>35</td>
+            <td>Croatia</td>
+            <td>Aure</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>34</td>
+            <td>England</td>
+            <td>Aksel</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>33</td>
+            <td>France</td>
+            <td>Didrik</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>32</td>
+            <td>Ghana</td>
+            <td>Hofstad</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>31</td>
+            <td>Iraq</td>
+            <td>Aksel</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>30</td>
+            <td>Jordan</td>
+            <td>Børre</td>
+            <td>Group J</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>29</td>
+            <td>Norway</td>
+            <td>Caspar</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>28</td>
+            <td>Panama</td>
+            <td>Leis</td>
+            <td>Group L</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>27</td>
+            <td>Portugal</td>
+            <td>Børre</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>26</td>
+            <td>Senegal</td>
+            <td>Didrik</td>
+            <td>Group I</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>25</td>
+            <td>Uzbekistan</td>
+            <td>Caspar</td>
+            <td>Group K</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>24</td>
+            <td>Belgium</td>
+            <td>Danny</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>23</td>
+            <td>Bosnia-Herzegovina</td>
+            <td>Unassigned</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>22</td>
+            <td>Brazil</td>
+            <td>Wilmer</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>21</td>
+            <td>Canada</td>
+            <td>Caspar</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>20</td>
+            <td>Cape Verde Islands</td>
+            <td>Wilmer</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>19</td>
+            <td>Egypt</td>
+            <td>Børre</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>18</td>
+            <td>Iran</td>
+            <td>Danny</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>17</td>
+            <td>Japan</td>
+            <td>Wilmer</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>16</td>
+            <td>Morocco</td>
+            <td>Opie</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>15</td>
+            <td>Netherlands</td>
+            <td>Aure</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>14</td>
+            <td>New Zealand</td>
+            <td>Zerv</td>
+            <td>Group G</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>13</td>
+            <td>Qatar</td>
+            <td>Leis</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>12</td>
+            <td>Saudi Arabia</td>
+            <td>Børre</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>11</td>
+            <td>Spain</td>
+            <td>Emil</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>10</td>
+            <td>Switzerland</td>
+            <td>Caspar</td>
+            <td>Group B</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>9</td>
+            <td>Uruguay</td>
+            <td>Aksel</td>
+            <td>Group H</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>8</td>
+            <td>Ivory Coast</td>
+            <td>Unassigned</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>7</td>
+            <td>Scotland</td>
+            <td>Leis</td>
+            <td>Group C</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>6</td>
+            <td>South Korea</td>
+            <td>Unassigned</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+1</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>5</td>
+            <td>Australia</td>
+            <td>Zerv</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>4</td>
+            <td>Mexico</td>
+            <td>Aure</td>
+            <td>Group A</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+2</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>3</td>
+            <td>United States</td>
+            <td>Aure</td>
+            <td>Group D</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+3</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>2</td>
+            <td>Sweden</td>
+            <td>Opie</td>
+            <td>Group F</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+4</td>
+            <td></td>
+        </tr>
+        
+        <tr class="">
+            <td>1</td>
+            <td>Germany</td>
+            <td>Didrik</td>
+            <td>Group E</td>
+            <td>1</td>
+            <td>3</td>
+            <td>+6</td>
+            <td></td>
+        </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

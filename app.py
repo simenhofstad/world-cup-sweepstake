@@ -1,0 +1,299 @@
+import requests
+import urllib3
+import webbrowser
+from datetime import datetime
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+import os
+
+API_KEY = os.environ["FOOTBALL_DATA_API_KEY"]
+
+players = {
+    "Aksel": ["Iraq", "Argentina", "England", "Uruguay"],
+    "Aure": ["Netherlands", "United States", "Mexico", "Croatia"],
+    "Børre": ["Egypt", "Portugal", "Jordan", "Saudi Arabia"],
+    "Caspar": ["Uzbekistan", "Canada", "Norway", "Switzerland"],
+    "Danny": ["Colombia", "Iran", "Turkey", "Belgium"],
+    "Didrik": ["Germany", "Côte d'Ivoire", "France", "Senegal"],
+    "Emil": ["Austria", "Spain", "Curaçao", "Ecuador"],
+    "Hofstad": ["Czech Republic", "Ghana", "Congo DR", "South Africa"],
+    "Leis": ["Panama", "Scotland", "Bosnia and Herzegovina", "Qatar"],
+    "Opie": ["Morocco", "Algeria", "Sweden", "Paraguay"],
+    "Wilmer": ["Japan", "Cape Verde Islands", "Brazil", "Korea Republic"],
+    "Zerv": ["Tunisia", "New Zealand", "Australia", "Haiti"],
+}
+
+
+def get_owner(team):
+    for player, teams in players.items():
+        if team in teams:
+            return player
+    return "Unassigned"
+
+
+def get_live_standings():
+    url = "https://api.football-data.org/v4/competitions/WC/standings"
+    headers = {"X-Auth-Token": API_KEY}
+
+    response = requests.get(url, headers=headers, verify=False)
+    data = response.json()
+
+    standings = []
+
+    for group in data["standings"]:
+        group_name = group.get("group", "")
+
+        for row in group["table"]:
+            team_name = row["team"]["name"]
+
+            standings.append({
+                "Team": team_name,
+                "Owner": get_owner(team_name),
+                "Group": group_name,
+                "Pts": row["points"],
+                "GD": row["goalDifference"],
+                "Played": row["playedGames"],
+                "GF": row["goalsFor"],
+                "GA": row["goalsAgainst"],
+            })
+
+    return standings
+
+
+def gd_format(gd):
+    return f"+{gd}" if gd > 0 else str(gd)
+
+
+def make_table(rows, table_type):
+    html = """
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Team</th>
+            <th>Owner</th>
+            <th>Group</th>
+            <th>Played</th>
+            <th>Pts</th>
+            <th>GD</th>
+            <th>Prize</th>
+        </tr>
+    """
+
+    for i, row in enumerate(rows):
+        if table_type == "top":
+            rank = i + 1
+            prize = "🥇 600 kr" if i == 0 else "🥈 400 kr" if i == 1 else ""
+            row_class = "gold" if i == 0 else "silver" if i == 1 else ""
+        else:
+            rank = 48 - i
+            prize = "🥄 200 kr" if i == 0 else ""
+            row_class = "spoon" if i == 0 else ""
+
+        html += f"""
+        <tr class="{row_class}">
+            <td>{rank}</td>
+            <td>{row["Team"]}</td>
+            <td>{row["Owner"]}</td>
+            <td>{row["Group"]}</td>
+            <td>{row["Played"]}</td>
+            <td>{row["Pts"]}</td>
+            <td>{gd_format(row["GD"])}</td>
+            <td>{prize}</td>
+        </tr>
+        """
+
+    html += "</table>"
+    return html
+
+
+standings = get_live_standings()
+
+top_race = sorted(standings, key=lambda x: (-x["Pts"], -x["GD"], x["Team"]))
+worst_race = sorted(standings, key=lambda x: (x["Pts"], x["GD"], x["Team"]))
+
+winner = top_race[0]
+runner_up = top_race[1]
+worst = worst_race[0]
+
+last_updated = datetime.now().strftime("%d %b %Y %H:%M")
+
+html = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300">
+    <title>World Cup Sweepstake</title>
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            background: #f2f5f8;
+            margin: 0;
+            padding: 30px;
+            color: #102030;
+        }}
+
+        h1 {{
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }}
+
+        .updated {{
+            text-align: center;
+            margin-bottom: 25px;
+            color: #607080;
+            font-size: 14px;
+        }}
+
+        .summary {{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 35px;
+        }}
+
+        .card {{
+            background: white;
+            width: 240px;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        }}
+
+        .card h2 {{
+            margin: 0;
+            font-size: 24px;
+        }}
+
+        .card h3 {{
+            margin: 14px 0 6px;
+            font-size: 26px;
+        }}
+
+        .card p {{
+            margin: 0;
+            font-size: 18px;
+            color: #4a5568;
+        }}
+
+        .tables {{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }}
+
+        .box {{
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }}
+
+        .box h2 {{
+            margin-top: 0;
+            text-align: center;
+            font-size: 24px;
+        }}
+
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }}
+
+        th {{
+            background: #12395b;
+            color: white;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }}
+
+        td {{
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }}
+
+        tr:nth-child(even) {{
+            background: #f7f9fb;
+        }}
+
+        .gold {{
+            background: #fff3bf !important;
+            font-weight: bold;
+        }}
+
+        .silver {{
+            background: #e5e7eb !important;
+            font-weight: bold;
+        }}
+
+        .spoon {{
+            background: #ffd6a5 !important;
+            font-weight: bold;
+        }}
+
+        @media (max-width: 1000px) {{
+            .summary, .tables {{
+                display: block;
+            }}
+
+            .card, .box {{
+                width: auto;
+                margin-bottom: 20px;
+            }}
+        }}
+    </style>
+</head>
+<body>
+
+<h1>🏆 World Cup Sweepstake</h1>
+<div class="updated">Last updated: {last_updated}</div>
+
+<div class="summary">
+    <div class="card">
+        <h2>🥇 600 kr</h2>
+        <h3>{winner["Owner"]}</h3>
+        <p>{winner["Team"]}</p>
+    </div>
+
+    <div class="card">
+        <h2>🥈 400 kr</h2>
+        <h3>{runner_up["Owner"]}</h3>
+        <p>{runner_up["Team"]}</p>
+    </div>
+
+    <div class="card">
+        <h2>🥄 200 kr</h2>
+        <h3>{worst["Owner"]}</h3>
+        <p>{worst["Team"]}</p>
+    </div>
+</div>
+
+<div class="tables">
+    <div class="box">
+        <h2>Race for 1st and 2nd Prize</h2>
+        {make_table(top_race, "top")}
+    </div>
+
+    <div class="box">
+        <h2>Race for Worst Team</h2>
+        {make_table(worst_race, "worst")}
+    </div>
+</div>
+
+</body>
+</html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as file:
+    file.write(html)
+
+webbrowser.open("index.html")
+
+print("Live leaderboard created: index.html")
