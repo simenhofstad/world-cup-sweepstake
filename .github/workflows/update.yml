@@ -1,4 +1,6 @@
 name: Update World Cup Sweepstake
+# activate cron
+
 
 on:
   schedule:
