@@ -292,19 +292,19 @@ html = f"""
                 margin-bottom: 20px;
             }}
         }}
-.owner-aksel      { background: #eef4fb !important; }  /* Light blue */
-.owner-aure       { background: #fdf4ea !important; }  /* Light orange */
-.owner-borre      { background: #edf7ed !important; }  /* Light green */
-.owner-caspar     { background: #fbeeee !important; }  /* Light red */
-.owner-danny      { background: #f4eff9 !important; }  /* Light purple */
-.owner-didrik     { background: #f6f2ef !important; }  /* Light brown */
-.owner-emil       { background: #fbf0f6 !important; }  /* Light pink */
-.owner-hofstad    { background: #edf8fa !important; }  /* Light cyan */
-.owner-leis       { background: #faf8ea !important; }  /* Light yellow */
-.owner-opie       { background: #f3f3f3 !important; }  /* Light grey */
-.owner-wilmer     { background: #edf2f8 !important; }  /* Light navy */
-.owner-zerv       { background: #fff5ec !important; }  /* Light peach */
-.owner-unassigned { background: #ffffff !important; }
+        .owner-aksel      {{ background: #eef4fb !important; }}
+        .owner-aure       {{ background: #fdf4ea !important; }}
+        .owner-borre      {{ background: #edf7ed !important; }}
+        .owner-caspar     {{ background: #fbeeee !important; }}
+        .owner-danny      {{ background: #f4eff9 !important; }}
+        .owner-didrik     {{ background: #f6f2ef !important; }}
+        .owner-emil       {{ background: #fbf0f6 !important; }}
+        .owner-hofstad    {{ background: #edf8fa !important; }}
+        .owner-leis       {{ background: #faf8ea !important; }}
+        .owner-opie       {{ background: #f3f3f3 !important; }}
+        .owner-wilmer     {{ background: #edf2f8 !important; }}
+        .owner-zerv       {{ background: #fff5ec !important; }}
+        .owner-unassigned {{ background: white !important; }}
 
     </style>
 </head>
