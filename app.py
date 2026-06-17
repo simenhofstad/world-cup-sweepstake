@@ -195,6 +195,17 @@ html = f"""
     <meta http-equiv="refresh" content="300">
     <title>World Cup Sweepstake</title>
     <style>
+        body {{
+            background:
+            linear-gradient(
+            ...
+            ),
+            linear-gradient(
+            ...
+            );
+
+            background-color: #f2f5f8;
+        }}
         body::after {{
             content: "";
             position: fixed;
