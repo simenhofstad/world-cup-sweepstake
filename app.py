@@ -133,8 +133,8 @@ def make_table(rows, table_type):
 
         move = movement_arrow(rank, previous_rank)
 
-    html += f"""
-    <tr class="{row_class} owner-{owner_class(row["Owner"])}">
+        html += f"""
+        <tr class="{row_class} owner-{owner_class(row["Owner"])}">
             <td>{rank}</td>
             <td>{move}</td>
             <td>{row["Owner"]}</td>
