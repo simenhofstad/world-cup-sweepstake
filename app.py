@@ -37,7 +37,23 @@ def get_live_standings():
     url = "https://api.football-data.org/v4/competitions/WC/standings"
     headers = {"X-Auth-Token": API_KEY}
 
-    response = requests.get(url, headers=headers, verify=False)
+    for attempt in range(3):
+        try:
+            response = requests.get(
+                url,
+                headers=headers,
+                verify=False,
+                timeout=20
+            )
+            response.raise_for_status()
+            break
+
+        except requests.exceptions.RequestException as error:
+            print(f"API request failed, attempt {attempt + 1}/3: {error}")
+
+            if attempt == 2:
+                raise
+
     data = response.json()
 
     standings = []
