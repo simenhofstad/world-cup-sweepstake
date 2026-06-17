@@ -249,14 +249,7 @@ html = f"""
             pointer-events: none;
             z-index: -1;
         }}
-        .sponsors {{
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                opacity: 0.08;
-                filter: grayscale(100%);
-                z-index: -1;
-        }}
+
         .sponsors-title {{
             font-family: Georgia, serif;
             font-size: 12px;
@@ -265,12 +258,24 @@ html = f"""
             color: #808080;
             margin-bottom: 15px;
         }}
+        .sponsors {{
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            width: 180px;
+            text-align: center;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+        }}
 
         .sponsor-logo {{
-                width: 180px;
-                display: block;
-                margin-bottom: 15px;
+            max-width: 75px;
+            height: auto;
+            margin: 4px;
+            vertical-align: middle;
         }}
+
 
         h1 {{
             text-align: center;
