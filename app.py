@@ -197,8 +197,33 @@ html = f"""
     <style>
         body {{
             background:
-                linear-gradient(to right, transparent 38%, #ffffff 38%, #ffffff 42%, #00205b 42%, #00205b 50%, #ffffff 50%, #ffffff 54%, transparent 54%),
-                linear-gradient(to bottom, transparent 42%, #ffffff 42%, #ffffff 46%, #00205b 46%, #00205b 54%, #ffffff 54%, #ffffff 58%, transparent 58%);
+                linear-gradient(
+                    to right,
+                    #ba0c2f 0%,
+                    #ba0c2f 38%,
+                    #ffffff 38%,
+                    #ffffff 42%,
+                    #00205b 42%,
+                    #00205b 50%,
+                    #ffffff 50%,
+                    #ffffff 54%,
+                    #ba0c2f 54%,
+                    #ba0c2f 100%
+                ),
+                linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    transparent 42%,
+                    #ffffff 42%,
+                    #ffffff 46%,
+                    #00205b 46%,
+                    #00205b 54%,
+                    #ffffff 54%,
+                    #ffffff 58%,
+                    transparent 58%,
+                    transparent 100%
+                );
+
             background-color: #f2f5f8;
         }}
 
