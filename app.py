@@ -248,7 +248,7 @@ html = f"""
             filter: grayscale(100%);
             pointer-events: none;
             z-index: -1;
-
+        }}
         .sponsors {{
                 position: fixed;
                 top: 20px;
