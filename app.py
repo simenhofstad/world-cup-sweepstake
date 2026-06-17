@@ -55,6 +55,9 @@ def get_live_standings():
                 "Pts": row["points"],
                 "GD": row["goalDifference"],
                 "Played": row["playedGames"],
+                "W": row["won"],
+                "D": row["draw"],
+                "L": row["lost"],
                 "GF": row["goalsFor"],
                 "GA": row["goalsAgainst"],
             })
@@ -110,6 +113,9 @@ def make_table(rows, table_type):
             <th>Team</th>
             <th>Group</th>
             <th>Played</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
             <th>Pts</th>
             <th>GD</th>
             <th>Prize</th>
@@ -141,6 +147,9 @@ def make_table(rows, table_type):
             <td>{row["Team"]}</td>
             <td>{row["Group"]}</td>
             <td>{row["Played"]}</td>
+            <td>{row["W"]}</td>
+            <td>{row["D"]}</td>
+            <td>{row["L"]}</td>
             <td>{row["Pts"]}</td>
             <td>{gd_format(row["GD"])}</td>
             <td>{prize}</td>
