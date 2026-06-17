@@ -6,44 +6,31 @@
     <meta http-equiv="refresh" content="300">
     <title>World Cup Sweepstake</title>
     <style>
-        body {
-            background:
-                linear-gradient(
-                    to right,
-                    #ba0c2f 0%,
-                    #ba0c2f 38%,
-                    #ffffff 38%,
-                    #ffffff 42%,
-                    #00205b 42%,
-                    #00205b 50%,
-                    #ffffff 50%,
-                    #ffffff 54%,
-                    #ba0c2f 54%,
-                    #ba0c2f 100%
-                ),
-                linear-gradient(
-                    to bottom,
-                    transparent 0%,
-                    transparent 42%,
-                    #ffffff 42%,
-                    #ffffff 46%,
-                    #00205b 46%,
-                    #00205b 54%,
-                    #ffffff 54%,
-                    #ffffff 58%,
-                    transparent 58%,
-                    transparent 100%
-                );
-
-            background-color: #f2f5f8;
+        body::after {
+            content: "";
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            width: 320px;
+            height: 320px;
+            background-image: url("tanker.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.08;
+            filter: grayscale(100%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         h1 {
             text-align: center;
-            font-size: 38px;
+            font-size: 42px;
             margin-bottom: 10px;
+            color: white;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.25);
         }
-
         .updated {
             text-align: center;
             margin-bottom: 25px;
@@ -157,8 +144,8 @@
 </head>
 <body>
 
-<h1>🏆 World Cup Sweepstake</h1>
-<div class="updated">Last updated: 17 Jun 2026 13:12</div>
+<h1>🏆 2026 World Cup Ryktebørsen </h1>
+<div class="updated">Last updated: 17 Jun 2026 13:36</div>
 
 <div class="summary">
     <div class="card">
