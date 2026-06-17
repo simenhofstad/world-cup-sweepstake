@@ -248,6 +248,25 @@ html = f"""
             filter: grayscale(100%);
             pointer-events: none;
             z-index: -1;
+
+        .sponsors {{
+            position: fixed;
+            left: 25px;
+            bottom: 20px;
+            opacity: 0.65;
+        }}
+
+        .sponsors-title {{
+            font-size: 12px;
+            color: #808080;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }}
+
+        .sponsor-logo {{
+            height: 55px;
+            margin-right: 20px;
         }}
 
         h1 {{
@@ -406,7 +425,14 @@ html = f"""
         {make_table(worst_race, "worst")}
     </div>
 </div>
+<div class="sponsors">
+    <div class="sponsors-title">
+        This World Cup is Sponsored by
+    </div>
 
+    <img src="kia.png" class="sponsor-logo">
+    <img src="kaha.png" class="sponsor-logo">
+</div>
 </body>
 </html>
 """
