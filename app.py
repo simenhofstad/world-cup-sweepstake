@@ -64,6 +64,11 @@ def get_live_standings():
 
 def gd_format(gd):
     return f"+{gd}" if gd > 0 else str(gd)
+
+
+def owner_class(owner):
+    return owner.lower().replace("ø", "o").replace(" ", "-")
+
 def load_previous_ranks():
     try:
         with open("previous_ranks.json", "r", encoding="utf-8") as file:
@@ -128,8 +133,8 @@ def make_table(rows, table_type):
 
         move = movement_arrow(rank, previous_rank)
 
-        html += f"""
-        <tr class="{row_class}">
+    html += f"""
+    <tr class="{row_class} owner-{owner_class(row["Owner"])}">
             <td>{rank}</td>
             <td>{move}</td>
             <td>{row["Owner"]}</td>
@@ -287,6 +292,20 @@ html = f"""
                 margin-bottom: 20px;
             }}
         }}
+.owner-aksel      { background: #eef4fb !important; }  /* Light blue */
+.owner-aure       { background: #fdf4ea !important; }  /* Light orange */
+.owner-borre      { background: #edf7ed !important; }  /* Light green */
+.owner-caspar     { background: #fbeeee !important; }  /* Light red */
+.owner-danny      { background: #f4eff9 !important; }  /* Light purple */
+.owner-didrik     { background: #f6f2ef !important; }  /* Light brown */
+.owner-emil       { background: #fbf0f6 !important; }  /* Light pink */
+.owner-hofstad    { background: #edf8fa !important; }  /* Light cyan */
+.owner-leis       { background: #faf8ea !important; }  /* Light yellow */
+.owner-opie       { background: #f3f3f3 !important; }  /* Light grey */
+.owner-wilmer     { background: #edf2f8 !important; }  /* Light navy */
+.owner-zerv       { background: #fff5ec !important; }  /* Light peach */
+.owner-unassigned { background: #ffffff !important; }
+
     </style>
 </head>
 <body>
