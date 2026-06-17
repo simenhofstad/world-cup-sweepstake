@@ -16,12 +16,12 @@ players = {
     "Børre": ["Egypt", "Portugal", "Jordan", "Saudi Arabia"],
     "Caspar": ["Uzbekistan", "Canada", "Norway", "Switzerland"],
     "Danny": ["Colombia", "Iran", "Turkey", "Belgium"],
-    "Didrik": ["Germany", "Côte d'Ivoire", "France", "Senegal"],
+    "Didrik": ["Germany", "Ivory Coast", "France", "Senegal"],
     "Emil": ["Austria", "Spain", "Curaçao", "Ecuador"],
-    "Hofstad": ["Czech Republic", "Ghana", "Congo DR", "South Africa"],
-    "Leis": ["Panama", "Scotland", "Bosnia and Herzegovina", "Qatar"],
+    "Hofstad": ["Czechia", "Ghana", "Congo DR", "South Africa"],
+    "Leis": ["Panama", "Scotland", "Bosnia-Herzegovina", "Qatar"],
     "Opie": ["Morocco", "Algeria", "Sweden", "Paraguay"],
-    "Wilmer": ["Japan", "Cape Verde Islands", "Brazil", "Korea Republic"],
+    "Wilmer": ["Japan", "Cape Verde Islands", "Brazil", "South Korea"],
     "Zerv": ["Tunisia", "New Zealand", "Australia", "Haiti"],
 }
 
