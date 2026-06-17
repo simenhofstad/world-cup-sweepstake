@@ -197,10 +197,26 @@ html = f"""
     <style>
         body {{
             font-family: Arial, sans-serif;
-            background: #f2f5f8;
+            background-color: #f2f5f8;
             margin: 0;
             padding: 30px;
             color: #102030;
+            position: relative;
+        }}
+
+        body::before {{
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%;
+            opacity: 0.03;
+            z-index: -1;
         }}
 
         h1 {{
